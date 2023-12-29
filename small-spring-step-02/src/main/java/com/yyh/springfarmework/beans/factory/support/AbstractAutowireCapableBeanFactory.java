@@ -4,8 +4,8 @@ import com.yyh.springfarmework.beans.BeansException;
 import com.yyh.springfarmework.beans.factory.config.BeanDefinition;
 
 /**
+ * 实现了 Bean 的实例化操作newInstance
  * @author sora
- * @description
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
     @Override

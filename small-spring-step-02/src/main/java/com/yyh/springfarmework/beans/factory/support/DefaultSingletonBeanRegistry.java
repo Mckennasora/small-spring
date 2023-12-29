@@ -6,8 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 主要实现 getSingleton 方法，同时实现了一个受保护的 addSingleton 方法，这个方法可以被继承此类的其他类调用。
+ * 包括：AbstractBeanFactory 以及继承的 DefaultListableBeanFactory 调用。
  * @author sora
- * @description
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
