@@ -22,12 +22,6 @@ import java.util.Map;
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
-    public DefaultListableBeanFactory(){
-        super();
-    }
-    public DefaultListableBeanFactory(InstantiationStrategy strategy) {
-        super(strategy);
-    }
 
     @Override
     public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) {

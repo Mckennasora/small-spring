@@ -2,7 +2,6 @@ package com.yyh.springfarmework.beans;
 
 /**
  * @author sora
- * @description
  */
 
 public class BeansException extends RuntimeException {

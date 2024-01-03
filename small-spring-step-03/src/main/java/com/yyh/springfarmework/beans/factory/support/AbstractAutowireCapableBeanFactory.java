@@ -12,14 +12,8 @@ import java.lang.reflect.Constructor;
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
 
-    private InstantiationStrategy instantiationStrategy = null;
-    AbstractAutowireCapableBeanFactory(){
-        instantiationStrategy = new CglibSubclassingInstantiationStrategy();
-    }
-
-    AbstractAutowireCapableBeanFactory(InstantiationStrategy strategy) {
-        instantiationStrategy = strategy;
-    }
+    // bean的生成策略，默认CGLIB
+    private InstantiationStrategy instantiationStrategy = new CglibSubclassingInstantiationStrategy();
 
     @Override
     protected Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException {
@@ -33,6 +27,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         return bean;
     }
 
+    //todo 这里只根据构造器的参数个数判断使用哪个构造器，不完整
     protected Object createBeanInstance(BeanDefinition beanDefinition, String beanName, Object[] args) {
         Constructor constructorToUse = null;
         Class beanClass = beanDefinition.getBeanClass();
@@ -44,6 +39,10 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             }
         }
         return getInstantiationStrategy().instantiate(beanDefinition, beanName, constructorToUse, args);
+    }
+
+    public void setInstantiationStrategy(InstantiationStrategy instantiationStrategy) {
+        this.instantiationStrategy = instantiationStrategy;
     }
 
     public InstantiationStrategy getInstantiationStrategy() {
