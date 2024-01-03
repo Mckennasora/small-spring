@@ -1,6 +1,7 @@
 package com.yyh.springfarmework.beans;
 
 /**
+ * Beans异常
  * @author sora
  */
 

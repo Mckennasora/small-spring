@@ -1,7 +1,8 @@
 package com.yyh.springfarmework.beans.factory.config;
 
 /**
- *  @author sora
+ * Bean的属性引用
+ * @author sora
  */
 public class BeanReference {
     private String beanName;

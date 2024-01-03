@@ -3,6 +3,10 @@ package com.yyh.springfarmework.beans;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 属性集合
+ * @author sora
+ */
 public class PropertyValues {
     private final List<PropertyValue> propertyValueList = new ArrayList<>();
 

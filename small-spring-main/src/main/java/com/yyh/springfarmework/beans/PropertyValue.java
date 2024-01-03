@@ -1,7 +1,7 @@
 package com.yyh.springfarmework.beans;
 
 /**
- *
+ * 属性值
  * @author sora
  */
 public class PropertyValue {
