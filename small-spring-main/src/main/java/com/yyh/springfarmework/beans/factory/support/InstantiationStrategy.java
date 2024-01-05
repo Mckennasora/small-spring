@@ -1,6 +1,7 @@
 package com.yyh.springfarmework.beans.factory.support;
 
 import com.yyh.springfarmework.beans.BeansException;
+import com.yyh.springfarmework.beans.core.io.Resource;
 import com.yyh.springfarmework.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;

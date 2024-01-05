@@ -33,6 +33,27 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         return bean;
     }
 
+    @Override
+    protected <T> T createBeanByType(String beanName, BeanDefinition beanDefinition, Class<T> requiredType) {
+        T bean = null;
+        try {
+            bean = createBeanInstanceByType(beanDefinition, requiredType);
+            applyPropertyValues(beanName, bean, beanDefinition);
+        } catch (Exception e) {
+            throw new BeansException("Instantiation of bean failed", e);
+        }
+        addSingleton(beanName, bean);
+        return bean;
+    }
+
+    private <T> T createBeanInstanceByType(BeanDefinition beanDefinition, Class<T> requiredType) {
+        try {
+            return requiredType.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+            throw new BeansException("Instantiation of bean failed", e);
+        }
+    }
+
     //todo 这里只根据构造器的参数个数判断使用哪个构造器，不完整
     protected Object createBeanInstance(BeanDefinition beanDefinition, String beanName, Object[] args) {
         Constructor constructorToUse = null;
