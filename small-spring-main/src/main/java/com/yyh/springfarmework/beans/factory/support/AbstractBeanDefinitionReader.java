@@ -4,7 +4,8 @@ import com.yyh.springfarmework.beans.core.io.DefaultResourceLoader;
 import com.yyh.springfarmework.beans.core.io.ResourceLoader;
 
 /**
- *
+ * 抽象的Bean定义读取器
+ * @author sora
  */
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
     private final BeanDefinitionRegistry registry;

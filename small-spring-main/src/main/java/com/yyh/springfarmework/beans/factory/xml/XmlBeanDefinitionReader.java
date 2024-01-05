@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * xml的读取类
+ *
  * @author sora
  */
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {

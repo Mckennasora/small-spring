@@ -4,6 +4,11 @@ import com.yyh.springfarmework.beans.BeansException;
 import com.yyh.springfarmework.beans.core.io.Resource;
 import com.yyh.springfarmework.beans.core.io.ResourceLoader;
 
+/**
+ * Bean定义读取器接口定义
+ *
+ * @author sora
+ */
 public interface BeanDefinitionReader {
     BeanDefinitionRegistry getRegistry();
 

@@ -37,7 +37,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     protected <T> T createBeanByType(String beanName, BeanDefinition beanDefinition, Class<T> requiredType) {
         T bean = null;
         try {
-            bean = createBeanInstanceByType(beanDefinition,requiredType);
+            bean = createBeanInstanceByType(beanDefinition, requiredType);
             applyPropertyValues(beanName, bean, beanDefinition);
         } catch (Exception e) {
             throw new BeansException("Instantiation of bean failed", e);

@@ -23,6 +23,8 @@ class ApiTest {
     @BeforeEach
     public void init() {
         resourceLoader = new DefaultResourceLoader();
+        System.setProperty("proxyHost", "localhost"); // PROXY_HOST：代理的IP地址
+        System.setProperty("proxyPort",  "2080"); // PROXY_PORT：代理的端口号
     }
 
     @Test
@@ -43,7 +45,7 @@ class ApiTest {
 
     @Test
     void test_url() throws IOException {
-        Resource resource = resourceLoader.getResource("https://github.com/fuzhengwei/small-spring/important.properties");
+        Resource resource = resourceLoader.getResource("https://github.com/Mckennasora/small-spring/blob/step-05/small-spring-main/src/main/resources/spring.xml");
         InputStream inputStream = resource.getInputStream();
         String content = IoUtil.readUtf8(inputStream);
         System.out.println(content);
